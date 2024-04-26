@@ -18,7 +18,7 @@ class BravesStats:
         self.live_scores = {}
 
 import requests
-import bs4
+from bs4 import BeautifulSoup
 
 url = "https://www.espn.com/mlb/team/_/name/atl/atlanta-braves"
 
@@ -28,7 +28,7 @@ def track_live_scores(self):
         url = "https://www.espn.com/mlb/team/_/name/atl/atlanta-braves"
         response = requests.get(url)
         if response.status_code == 200:
-            soup = bs4(response.text, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser')
             score_div = soup.find("div", class_="ScoreCell__MainScoreContainer")
             if score_div:
                 score = score_div.text.strip()
