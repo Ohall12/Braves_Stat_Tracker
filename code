@@ -11,20 +11,24 @@ class BravesStats:
     def track_live_scores(self):
         # Method to track real-time updates and live tracking of Atlanta Braves games
         pass
-import requests
-from bs4 import BeautifulSoup
 
 class BravesStats:
     def __init__(self):
         # Initialize BravesStats application
         self.live_scores = {}
 
-    def track_live_scores(self):
+import requests
+import bs4
+
+url = "https://www.espn.com/mlb/team/_/name/atl/atlanta-braves"
+
+
+def track_live_scores(self):
         # Method to track real-time updates and live tracking of Atlanta Braves games
         url = "https://www.espn.com/mlb/team/_/name/atl/atlanta-braves"
         response = requests.get(url)
         if response.status_code == 200:
-            soup = BeautifulSoup(response.text, 'html.parser')
+            soup = bs4(response.text, 'html.parser')
             score_div = soup.find("div", class_="ScoreCell__MainScoreContainer")
             if score_div:
                 score = score_div.text.strip()
@@ -45,7 +49,6 @@ if __name__ == "__main__":
     def analyze_player_statistics(self):
         # Method to provide comprehensive statistical analysis of individual player performance
         pass
-import requests
 
 class BravesStats:
     def __init__(self):
@@ -84,21 +87,13 @@ if __name__ == "__main__":
     def analyze_team_statistics(self):
         # Method to aggregate team statistics and provide insights into overall team performance
         pass
-import requests
-
-class BravesStats:
-    def __init__(self):
-        # Initialize BravesStats application
-        self.team_statistics = {}
 
     def analyze_team_statistics(self):
         # Method to aggregate team statistics and provide insights into overall team performance
-  import requests
-
-class BravesStats:
-    def __init__(self):
+        class BravesStats:
+            def __init__(self):
         # Initialize BravesStats application
-        self.team_statistics = {}
+                self.team_statistics = {}
 
     def analyze_team_statistics(self):
         # Method to aggregate team statistics and provide insights into overall team performance
